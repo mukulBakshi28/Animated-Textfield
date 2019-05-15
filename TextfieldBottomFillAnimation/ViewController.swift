@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         myTxtField.center = view.center
         myTxtField.animationPos = .Center
+        myTxtField.lineColor = .green
         myTxtField.mbDelegate = self
         view.addSubview(myTxtField)
     }

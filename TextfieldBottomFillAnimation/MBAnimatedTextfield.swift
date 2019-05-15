@@ -18,6 +18,7 @@ class MBAnimatedTextfield:UITextField,UITextFieldDelegate {
     
     weak var mbDelegate:MBTextfielDelegates?
     var animationPos:AnimationPosition = .Start
+    var lineColor:UIColor = .black
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,7 +49,7 @@ extension MBAnimatedTextfield {
         let pointVal = animationPos == .Start ? CGPoint(x: 0, y: 0) : CGPoint(x: 0.5, y: 0.5)
         lineLayer.anchorPoint = pointVal
         lineLayer.frame = CGRect(x: 0, y: frame.size.height - 1, width: frame.size.width, height: 2)
-        lineLayer.backgroundColor = UIColor.red.cgColor
+        lineLayer.backgroundColor = lineColor.cgColor
         layer.addSublayer(lineLayer)
         let bAnimation = CABasicAnimation()
         bAnimation.keyPath = "bounds"
